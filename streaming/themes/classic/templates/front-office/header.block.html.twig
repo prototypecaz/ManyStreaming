@@ -1,0 +1,60 @@
+{% block header %}
+<header class="divHeader mt-2 mb-5">
+
+<section class="container">
+
+   
+
+
+    <nav class="row  h-75 position-relative  justify-content-center" id="navbarSupportedContent1">
+
+  
+
+        <div class="col-md-12 col-lg-2 col-sm-12 col-12 text-center text-white">
+            <a href="./"> <h2 class="text-uppercase text-white font-weight-bold">
+            <span class="text-primary">m</span>amy<span class="text-primary">s</span>treaming
+            </h4> </a>
+         </div>
+
+
+            <div class="col-6 col-sm-6 col-md-5 col-lg-2 offset-lg-2 text-center dropdown hauteur">
+                <span class="nav-item nav-link text-white font-weight-bold h5">{{ menu[0].text }} </span>
+                <div class="dropdown-menu position-absolute">
+                    {% for categorie in categories %}
+                    <a href="./?categorie={{categorie.id}}" class="dropdown-item">{{categorie.category}}</a>
+                    {% endfor %} 
+                </div>
+            </div> 
+
+            <div class="col-6 col-sm-6 col-md-5 col-lg-2 dropdown hauteur text-center">
+                <span class="nav-item nav-link text-white font-weight-bold h5">{{ menu[1].text }} </span>
+                <div class="dropdown-menu">
+                    {% for genre in genres %}
+                    <a href="./?genres={{genre.id}}" class="dropdown-item">{{genre.gender}}</a>
+                    {% endfor %} 
+                </div>
+            </div>
+    
+
+                <div class="col-6 col-sm-6 col-md-6 col-lg-2 ">
+                    <form method="GET" id="rechercher"  action="./">
+                        <input class="barreRecherche w-100 rounded-pill text-center "  type="text" placeholder="Rechercher" name="search" id="recherche">
+                    </form>
+                </div>
+
+                <div class="col-6 col-sm-6 col-md-6 col-lg-2 nav-item dropdown h5">
+                    <a href="{{ menu[2].href }}" title="{{ menu[2].title }}" class="btn btn-header font-weight-bold rounded-pill nav-item nav-link text-white">{{ menu[2].text }} </a>
+
+                </div> 
+</nav>
+                <div class="position-absolute nouveauHeader d-none d-lg-block">
+                        <h1 class="text-white font-weight-bold">WARCRAFT</h1>
+                </div>
+
+                <a href="#"><img src="./assets/img/header/play-icon.png" class="position-absolute iconeHeader d-none d-lg-block"></a>
+
+
+    
+    </section>
+</header>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% block getAll %}
+
+
+{% if "delete-user" in page %}
+ <table id="myTable" class="display" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Activate</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                {% for mailUser in emailUser %}
+                
+                <tr>
+                <td>{{mailUser['email']}}</td>
+                <td>{{mailUser['activate']}}</td>
+                <td>
+                 
+                <a class="btn btn-primary" href="./delete/delete-user.php?userid={{mailUser['id']}}">Supprimer</a>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% elseif "delete-video" in page %}
+    <table id="myTable" class="display" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th class="text-white">video</th>
+                    <th class="text-white">Activate</th>
+                    <th class="text-white">Supprimer ou modifier</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                {% for movie in movies %}
+                
+                <tr>
+                <td>{{movie['title']}}</td>
+                <td><img class="imgSize rounded" src="../assets/upload/{{movie['picture']}}"></td>
+                <td>
+                 
+                <a class="btn btn-primary" href="./delete/delete-video.php?videoid={{movie['id']}}">Supprimer</a>
+               
+                <a class="btn btn-primary" href="./?update-video#{{movie.id}}"  id="update-movie">Modifier video</a>
+                
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endif %}
+
+{% endblock %}

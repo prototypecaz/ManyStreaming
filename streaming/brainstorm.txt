@@ -1,0 +1,99 @@
+Front-Office :
+
+La barre de recherche (header)
+Connexion pour les utilisateurs (header)
+Inscription pour les utilisateurs (selon vous)
+Mot de passe oublié (selon vous)
+
+++ Pages
++ Accueil -> Affichage des nouveautés (Titres et images des films)
+Les categories (header) -> 
+    Une proposition de tri par genres et/ou dates (selon vous)
+    Un clique affiche toutes les videos de cette categorie (section)
++ Video -> Titre, l'image, la description, la date et le lecteur Youtube pour le lien.
+
+Back-Office (formulaire pour l'acces a la zone d'administration) :
+
+// Gestion des videos
+Ajouter une video -> les images avec un formulaire d'upload
+
+Supprimer une video
+(difficile) Modifier une video 
+Ajouter un genre
+Ajouter une categorie
+
+// Gestion des utilisateurs
+Supprimer un utilisateur
+
+// Personnalisation
+Un formulaire d'upload pour changer le background du site
+
+
+ADMINISTRATION
+    DELETE
+        index.php
+        delete-user.php
+        delete-video.php
+    INSERT
+        index.php
+        insert-video.php
+        insert-genre.php
+        insert-categorie.php
+    UPDATE
+        index.php
+        update-video.php
+        update-background.php
+    index.php (controller back-office)
+    login.php
+
+CACHE
+    index.php
+
+ASSETS
+    index.php
+    js
+        index.php
+    css
+        index.php
+    lib
+        index.php
+    font
+        index.php
+    img
+        index.php
+
+CLASSES
+    index.php
+    Database.php
+    Sanitzing.php
+    Encryption.php
+    Mailer.php
+
+INCLUDES
+    securityHeaders.php
+
+VENDOR
+    index.php
+
+THEMES
+    index.php
+
+        classic
+        *index.php
+
+            /templates
+            BACK-OFFICE
+            *index.php
+            FRONT-OFFICE
+            *index.php
+
+index.php (controller front-office)
+configuration.php
+register.php
+activate.php
+strength.php
+forget.php
+.htaccess
+robots.txt
+sitemap.xml
+

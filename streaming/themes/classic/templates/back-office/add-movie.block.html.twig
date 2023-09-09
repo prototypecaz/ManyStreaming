@@ -1,0 +1,41 @@
+{% block movie %}
+<form  class="d-flex flex-column justify-content-center align-items-center" method="POST" enctype="multipart/form-data" action="./insert/insert-movie.php" > 
+<label for="titre">Titre</label>
+<input id="titre" type="text" name="titre" placeholder="titre" maxlength="75" required>
+<label for="description">Description</label>
+<input id="description" type="text" name="description" placeholder="description" required>
+<label for="image">Image</label>
+<input id="image" type="file" name="image" accept=".jpg, .jpeg, .gif, .png, .bmp" required>
+<label for="video">Lien vidéo</label>
+<input id="video" type="text" name="video" placeholder="video" maxlength="255" required>
+<label for="prive">Privée ?</label>
+<input type="checkbox" name="prive" id="prive" placeholder="0" value="1" >
+<label for="categorie">Catégorie  </label>
+<select id="categorie" name="categorie">
+<option value="">Choisir votre categorie</option>
+  {% for categorie in category %}
+        <option value="{{categorie['id']}}">{{categorie['category']}}</option>
+  {% endfor %}
+</select>
+<label>Genre</label>
+<select id="genre" name="genre">
+<option value="">Choisir votre genre</option>
+  {% for gender in genders %}
+<option value="{{gender['id']}}">{{gender['gender']}}</option>
+  {% endfor %}
+</select>
+<label>Année</label>
+<select id="annee" name="annee">
+<option value="">Choisir l'année</option>
+  {% for year in years %}
+<option value="{{year['id']}}">{{year['year']}}</option>
+  {% endfor %}
+</select>
+<button type="submit">Creer vidéo</button>
+
+
+
+
+</form>
+
+{% endblock %}

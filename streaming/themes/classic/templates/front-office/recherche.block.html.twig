@@ -1,0 +1,11 @@
+{% block recherche %}
+<div class="d-flex flex-wrap">
+{% for search in recherche %}
+<div class="col-4">
+<h2 class="text-warning text-center">{{search['title']}}</h2>
+<a href="./?uniquemov={{search.id}}"><img src="./assets/upload/{{search.picture}}" class="w-50 d-block mx-auto"></a>
+
+</div>
+{% endfor %}
+</div>
+{% endblock %}

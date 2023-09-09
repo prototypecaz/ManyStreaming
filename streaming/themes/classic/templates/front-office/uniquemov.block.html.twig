@@ -1,0 +1,19 @@
+{% block uniquemov %}
+
+   
+    {% if uniqueMov is empty %}
+        <h2>Vous n'etes pas connecté</h2>
+
+        {% else %}
+        <h2>{{uniqueMov[0].title}}</h2>
+
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{uniqueMov[0].link}}" allowfullscreen></iframe>
+        </div>
+    {% endif %}
+    
+
+    
+
+{% endblock %}
+

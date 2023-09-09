@@ -1,0 +1,14 @@
+{% block gender %}
+    <form method="POST" action="./insert/insert-gender.php"> 
+        <label for="gender">genres</label>
+        <input type="text" name="gender" id="gender" placeholder="Genre" required>
+        <label for="category">categories</label>
+        <select name="category" id="category">
+        <option value="">Choirsir categories</option>
+        {% for categorie in category %}
+        <option value="{{categorie['id']}}">{{categorie['category']}}</option>
+        {% endfor %}
+        </select>
+        <button type="submit">Envoyer</button>
+    </form>
+{% endblock %}

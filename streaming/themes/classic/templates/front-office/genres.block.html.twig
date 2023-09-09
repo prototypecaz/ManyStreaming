@@ -1,0 +1,13 @@
+{% block genres %}
+
+<section class="row">
+{% for genre in choiceGenre %}
+
+<article class="col-4 mt-4">
+                <h5 class="text-center font-weight-bold text-white">{{genre.title}}</h5>
+                <a href="./?uniquemov={{genre.id}}"><img src="./assets/upload/{{genre.picture}}" class="w-50 d-block mx-auto"></a>
+            </article>
+{% endfor %}
+</section>
+
+{% endblock %}

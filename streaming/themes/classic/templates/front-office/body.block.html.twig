@@ -1,0 +1,39 @@
+{% block body %}
+
+<body style="background-color:#0C1419">
+{# une autre façon d'inclure du css dynamiquement #}
+ {#  <body style = "background-image: url('./assets/upload/{{backgroundImg[0]['background']}}');"> #}
+        {# inclure le fichier Twig contenant le block #}
+        {% include('header.block.html.twig') %}
+        {# appel du block #}
+        {% block header %}{% endblock %}
+
+        {# inclure le fichier Twig contenant le block #}
+        {% include('main.block.html.twig') %}
+        {# appel du block #}
+        {% block main %}{% endblock %}
+
+        {# inclure le fichier Twig contenant le block #}
+        {% include('footer.block.html.twig') %}
+        {# appel du block #}
+        {% block footer %}{% endblock %}
+
+      <script type="text/javascript" src="./assets/lib/jquery/jquery-3.5.1.min.js"></script>
+      <script type="text/javascript" src="./assets/lib/bootstrap/bootstrap.min.js"></script>
+       <!-- Call carousel -->
+        <script type="text/javascript">
+            $('.carousel').carousel()
+        </script>
+     
+     
+      
+        {# <script type="text/javascript" src="./assets/js/activate.js"></script> #}
+     
+     
+     {#    <script type="text/javascript" src="./assets/js/registerUser.js"></script> #}
+    
+     
+  </body>
+</html>
+
+{% endblock %}

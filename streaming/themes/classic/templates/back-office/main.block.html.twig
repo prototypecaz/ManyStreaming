@@ -1,0 +1,61 @@
+{% block main %}
+<main class="container-fluid">
+
+{% if page is same as('') %}
+<div class="bg-primary text-white h3 text-center rounded my-1 py-2">
+    Espace administrateur
+</div>
+<div class="d-flex flex-column align-items-center justify-content-center text-center mt-4 py-3 border-bleu">
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+         <a class="text-danger font-weight-bold py-3 pz-3" href="./?delete-user">Supprimer un user</a>
+    </div>
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+        <a class="text-danger font-weight-bold py-3 pz-3" href="./?delete-video">Supprimer une video</a>
+    </div>
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+         <a class="text-success font-weight-bold py-3 pz-3" href="./?delete-video">Modifier une video</a>
+    </div>
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+        <a class="text-success font-weight-bold py-3 pz-3"  href="./?add-gender">Modifier background</a>
+    </div>
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+        <a class="text-primary font-weight-bold py-3 pz-3"  href="./?add-gender">Ajouter un genre</a>
+    </div>
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+        <a class="text-primary font-weight-bold py-3 pz-3"  href="./?add-gender">Ajouter un une categorie</a>
+    </div>
+    
+    <div class="col-8 Col-md-3 border-primary bg-dark h6 text-center ml-auto mr-auto rounded-pill mb-3 mt-3 pt-3 pb-3">
+        <a class="text-primary font-weight-bold py-3 pz-3"  href="./?add-movie">Ajouter une video</a>
+    </div>
+</div>
+
+{% elseif 'delete-user' in page %}
+ {% include('get-all.block.html.twig') %}
+ {% block getAll %}{% endblock %}
+
+ {% elseif 'delete-video' in page %}
+ {% include('get-all.block.html.twig') %}
+
+ {% elseif 'add-gender' in page %}
+ {% include('add-gender.block.html.twig') %}
+ {% block gender %}{% endblock %}
+ {% include('add-category.block.html.twig') %}
+{% block category %}{% endblock %}
+ {% include('update-backgroundImg.block.html.twig') %}
+{% block backgroundImg %}{% endblock %}
+
+{% elseif 'update-video' in page %}
+{% include('update-movie.block.html.twig') %}
+{% block updateMovie %}{% endblock %}
+
+ 
+ {% elseif 'add-movie' in page %}
+ {% include('add-movie.block.html.twig') %}
+ {% block movie %}{% endblock %}
+   
+{% endif %}
+    
+</main>
+
+{% endblock %}

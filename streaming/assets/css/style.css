@@ -1,0 +1,110 @@
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    margin-top: -1px!important;
+}
+
+.border-primary{
+    border: solid!important;
+    border-width:5px !important;
+    border-color: red!important;
+    
+}
+
+.border-bleu{
+    border: solid!important;
+    border-width:5px !important;
+    border-color: #007bff!important;
+    border-radius: 350px!important;
+    
+}
+
+
+.border-dark{
+    border: solid!important;
+    border-width:5px !important;
+    border-color: #343a40!important;
+}
+
+.imgSize{
+    width: 100px!important;
+    
+}
+
+body {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+   
+}
+
+.fa{
+    font-size: 25px!important;
+}
+
+header{
+    background-image: url("../img/header/warcraft-movie-header.jpg")!important;
+    background-size: cover;
+}
+
+.btn-header{
+
+    background-color: #1b5987!important;
+    
+}
+
+.barreRecherche{
+    height: 41px!important;
+}
+
+.hauteur{
+    height: 35px!important;
+}
+
+@media all and (max-width: 1024px)
+{
+    .border-bleu{
+        
+        border-width:5px !important;
+        border-color: #007bff!important;
+        border-radius: 100px!important;
+        
+    }
+}
+
+@media screen and (max-width: 1150px){
+
+    .imgSlide{
+        width: 50px!important;
+    }
+
+}
+
+
+.nouveauHeader{
+    bottom: 35%!important;
+    left:13%!important;
+}
+
+.iconeHeader{
+    bottom:50%!important;
+    left:45%!important;
+    width: 130px!important;
+}
+
+.divHeader{
+
+    box-shadow: inset -30px -120px 150px -120px  #1b5987 ;
+
+}
+
+.imgSlide{
+    width: 300px!important;
+}
+
+footer{
+    background-color: #101A20;
+    
+}

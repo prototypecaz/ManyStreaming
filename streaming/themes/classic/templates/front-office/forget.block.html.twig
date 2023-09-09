@@ -1,0 +1,17 @@
+{#  #}
+
+{% block forget %}
+
+ <!-- Formulaire de mot de pass oublier -->
+    <section>
+                
+        <form class="d-flex flex-column justify-content-center align-items-center mt-5 " method="POST" action="./forget.php">
+            <label class="col-12 col-md-6 mt-3 h4 text-center bg-dark text-primary rounded" for="emailForget">Entrer votre mail</label>
+            <input class="col-12 col-md-6 text-center mt-1" id="emailForget" type="email" name="email" maxlength="320" placeholder="e.dupont@gmail.com" required>
+            <button id="btnForget" class="col-6 Col-md-3 border-primary bg-dark h4 text-center text-white rounded-pill mt-3 py-1" type="submit">envoyer</button>
+        </form>
+        <div class="col-12 col-md-6 mx-auto border border-dark bg-danger text-white h3 text-center rounded mb-3 mt-3" id="erreurs"></div>
+                
+    </section>
+  <script type="text/javascript" src="./assets/js/loginUser.js"></script>
+    {% endblock %}

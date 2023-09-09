@@ -1,0 +1,81 @@
+{% block main %}
+<main class="container ">
+
+{% if page is same as('') or page is same as ('accueil') %}
+
+<section id="slider" class="text-center my-5 d-none d-sm-none d-md-none d-lg-block">
+        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                {% for movie in lastSlidemovies %}
+                    <img class="imgSlide mx-3" src="./assets/upload/{{ movie.picture }}" alt="{{ movie.title }}">
+                {% endfor %}
+                </div>
+                <div class="carousel-item">
+                {% for movie in firstSlidemovies %}
+                    <img class="imgSLide mx-3" src="./assets/upload/{{ movie.picture }}" alt="{{ movie.title }}">
+                {% endfor %}
+                </div>
+            </div>
+            <a class="carousel-control-prev " href="#carouselIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next " href="#carouselIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+</section>
+   
+
+    <section>
+        <h3 class="text-white font-weight-bold ml-md-3 "><u>Derniere sortie:</u></h3>
+            <div class="row">
+        {% for movie in movies %}
+            
+            <article class="col-md-4 col-lg-3 col-6 col-sm-6 mt-5">
+                <h5 class="text-center text-white font-weight-bold">{{movie.title}}</h5>
+                <a href="./?uniquemov={{movie.id}}"><img src="./assets/upload/{{movie.picture}}" class="w-75 d-block mx-auto"></a>
+            </article>
+        {% endfor %}
+            </div>
+    </section>
+    
+        {% elseif 'uniquemov' in page %}
+        {% include('uniquemov.block.html.twig') %}
+        {% block uniquemov %}{% endblock %}
+
+        {% elseif 'categorie' in page %}
+        {% include('categories.block.html.twig') %}
+        {% block categories %}{% endblock %}
+
+        {% elseif 'genres' in page %}
+        {% include('genres.block.html.twig') %}
+        {% block genres %}{% endblock %}
+
+        {% elseif 'connexion' in page %}
+        {% include('connexion.block.html.twig') %}
+        {% block connexion %}{% endblock %}
+
+        {% elseif 'inscription' in page %}
+        {% include('inscription.block.html.twig') %}
+        {% block inscription %}{% endblock %}
+
+        {% elseif 'forget' in page %}
+        {% include('forget.block.html.twig') %}
+        {% block forget %}{% endblock %}
+
+        {% elseif 'search' in page %}
+        {% include('recherche.block.html.twig') %}
+        {% block recherche %}{% endblock %}
+
+{% endif %}
+    
+</main>
+
+{% endblock %}

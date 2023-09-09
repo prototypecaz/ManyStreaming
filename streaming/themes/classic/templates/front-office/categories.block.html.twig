@@ -1,0 +1,12 @@
+{# recupère les categries avec des lien qui contient des GET qui contient l'id
+de la categorie choisie via la boucle for #}
+{% block categories %}
+
+{% for choice in choiceCategory %}
+<div class="mt-2">
+<a class="btn btn-primary d-flex flex-column font-weight-bold" href="./?genres={{choice.id}}">{{choice.gender}}</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}
